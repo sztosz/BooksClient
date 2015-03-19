@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QTableView
-from models.BooksModel import BooksModel
+from models import BooksModel
 
 
 class BooksQTableView(QTableView):

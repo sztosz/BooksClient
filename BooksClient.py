@@ -1,18 +1,6 @@
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QApplication
 from PyQt5.QtCore import QCoreApplication
-from widgets.BooksQTableView import BooksQTableView
-
-
-class BooksClient(QDialog):
-    def __init__(self):
-        super().__init__()
-        self.setWindowTitle('Books Rental')
-
-        books_view = BooksQTableView(self)
-
-        layout = QVBoxLayout(self)
-        layout.addWidget(books_view)
-        self.setLayout(layout)
+from controllers import ShowBooksController
 
 
 if __name__ == '__main__':
@@ -22,6 +10,5 @@ if __name__ == '__main__':
 
 
     app = QApplication([])
-    win = BooksClient()
-    win.show()
+    win = ShowBooksController()
     app.exec_()

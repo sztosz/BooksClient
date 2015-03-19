@@ -1,1 +1,1 @@
-__author__ = 'Bartosz Nowak'
+from .BooksModel import BooksModel
