@@ -14,6 +14,10 @@ class ApiClient():
 
         pass
 
+    def put_book(self, book):
+        response = requests.post(self.url + '/books/', book)
+        return response.json()
+
     def get_all_renting_persons(self):
         pass
 

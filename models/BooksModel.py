@@ -1,6 +1,6 @@
 import operator
-from PyQt5.QtCore import QAbstractTableModel, Qt
-from services.DataProx import DataProxy
+from PyQt5.QtCore import QAbstractTableModel, Qt, QModelIndex
+from services.DataProxy import DataProxy
 
 
 class BooksModel(QAbstractTableModel):
@@ -11,7 +11,6 @@ class BooksModel(QAbstractTableModel):
     def __init__(self, parent, *args):
         super().__init__(parent, *args)
         self.data = self.data_proxy.get_all_books()
-        print(self.data)
         self.get_headers()
 
     def get_headers(self):
@@ -43,5 +42,11 @@ class BooksModel(QAbstractTableModel):
         if order == Qt.DescendingOrder:
             self.data.reverse()
         self.layoutChanged.emit()
+
+    def insertRows(self, row=0, index_parent=None, data=None, *args, **kwargs):
+        self.beginInsertRows(QModelIndex(), 0, 0)
+        if data:
+            self.data.append(data)
+        self.endInsertRows()
 
 

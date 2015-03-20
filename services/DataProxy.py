@@ -3,7 +3,7 @@ from .ApiClient import ApiClient
 
 class DataProxy():
 
-    url = 'http://127.0.0.1:8000/api/v1'
+    url = 'http://books.sztosz.tk/api/v1'
     data_source = ApiClient(url)
 
     def get_all_books(self):
@@ -11,6 +11,9 @@ class DataProxy():
 
     def get_book(self, id):
         pass
+
+    def put_book(self, book):
+        return self.data_source.put_book(book)
 
     def get_all_renting_persons(self):
         pass
