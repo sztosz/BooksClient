@@ -14,8 +14,6 @@ class ApiClient():
         pass
 
     def edit_book(self, _id, book):
-        print(self.url + '/books/' + str(_id))
-        print(book)
         response = requests.put(self.url + '/books/' + str(_id) + '/', book)
         return response.json()
 

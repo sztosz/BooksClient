@@ -3,7 +3,7 @@ from PyQt5.QtCore import QAbstractTableModel, Qt, QModelIndex
 from services.DataProxy import DataProxy
 
 
-class BooksModel(QAbstractTableModel):
+class DataModel(QAbstractTableModel):
 
     data_proxy = DataProxy()
     headers = []
