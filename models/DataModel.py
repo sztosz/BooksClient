@@ -37,8 +37,7 @@ class DataModel(QAbstractTableModel):
 
     def sort(self, column, order):
         self.layoutAboutToBeChanged.emit()
-        self.__data = sorted(self.__data,
-                           key=operator.itemgetter(self.headers[column]))
+        self.__data = sorted(self.__data, key=operator.itemgetter(self.headers[column]))
         if order == Qt.DescendingOrder:
             self.__data.reverse()
         self.layoutChanged.emit()

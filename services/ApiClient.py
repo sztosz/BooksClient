@@ -8,6 +8,7 @@ class ApiClient():
 
     def get_all_books(self):
         response = requests.get(self.url + '/books/')
+        print(response.json())
         return response.json()
 
     def get_book(self, _id):
