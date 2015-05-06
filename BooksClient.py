@@ -6,7 +6,7 @@ from controllers import ShowBooksController
 if __name__ == '__main__':
 
     # Needed fo my VirtualEnv
-    QCoreApplication.setLibraryPaths(['../BooksClientVenv/Lib/site-packages/PyQt5/plugins'])
+    # QCoreApplication.setLibraryPaths(['../BooksClientVenv/Lib/site-packages/PyQt5/plugins'])
 
 
     app = QApplication([])

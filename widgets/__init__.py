@@ -1,1 +1,1 @@
-from .BooksQTableView import BooksQTableView
+from .SortableQTableView import SortableQTableView

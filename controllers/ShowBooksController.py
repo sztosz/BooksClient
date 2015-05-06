@@ -1,14 +1,14 @@
 from PyQt5.QtWidgets import QPushButton
 from views import BooksDialog
 from controllers import AddBookController
-from widgets import BooksQTableView
+from widgets import SortableQTableView
 from models import BooksModel
 
 class ShowBooksController():
     def __init__(self):
         self.books_dialog = BooksDialog()
 
-        self.books_view = BooksQTableView(self.books_dialog)
+        self.books_view = SortableQTableView(self.books_dialog)
         self.books_model = BooksModel(self.books_view)
         self.books_view.setModel(self.books_model)
         self.books_dialog.layout.addWidget(self.books_view)
